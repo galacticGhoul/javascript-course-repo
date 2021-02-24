@@ -8,26 +8,45 @@
 </head>
 <body>
     <form>
-        <input type = "radio" name = "timezone" value = "eastern" id = "eastern">
+        <input type = "radio" name = "timezone" value = "Eastern" id = "eastern">
         <label for = "eastern">Eastern Standard Time</label><br>
 
-        <input type = "radio" name = "timezone" value = "central" id = "central">
+        <input type = "radio" name = "timezone" value = "Central" id = "central">
         <label for = "central">Central Standard Time</label><br>
 
-        <input type = "radio" name = "timezone" value = "mountain" id = "mountain">
+        <input type = "radio" name = "timezone" value = "Mountain" id = "mountain">
         <label for = "mountain">Mountain Standard Time</label><br>
 
-        <input type = "radio" name = "timezone" value = "pacific" id = "pacific">
+        <input type = "radio" name = "timezone" value = "Pacific" id = "pacific">
         <label for = "pacific">Pacific Standard Time</label><br> 
         
-        <input type = "radio" name = "timezone" value = "alaska" id = "alaska">
+        <input type = "radio" name = "timezone" value = "Alaska" id = "alaska">
         <label for = "alaska">Alaska Standard Time</label><br>
 
-        <input type = "radio" name = "timezone" value = "hawaii" id = "hawaii">
+        <input type = "radio" name = "timezone" value = "Hawaii" id = "hawaii">
         <label for = "hawaii">Hawaii Standard Time</label><br>
 
-        <button type = "button" value = "Submit">Submit</button><br>
+        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button><br>
     </form>
     <div id = "printZone"></div>
+    <script type = "text/javascript">
+        function readForm(){
+            /*THIS LINE OF CODE REFERENCES THE HTML PG BY USING THE DOC OBJ. AND GATHERING ALL THE ELEMENTS WITH THE SAME VALUE FOR THE NAME PROP.*/
+            var radioButtons = document.getElementsByName("timezone");
+
+            /*WILL HOLD THE SELECTED BUTTONS VALUE - THE VALUE IS UNIQUE TO EA. BUTTON - SET TO INDEX VALUE 0 - THIS IS AN ARRAY MEANING ACCESS TO AN ELEMENT MUST USE NAME AND BRACKETS*/ 
+            var selected = radioButtons[0].value; 
+
+            for (var i = 0; i < radioButtons.length; i++){
+                /*IF CHECKED IS TRUE*/
+                if (radioButtons[i].checked == true){
+                    /*TO SAVE THE CHECKED RADIO BUTTON AT CURRENT INDEX*/
+                    selected = radioButtons[i].value; 
+                }
+            }
+
+            document.getElementById("printZone").innerHTML = selected; 
+        }
+    </script>
 </body>
 </html>
