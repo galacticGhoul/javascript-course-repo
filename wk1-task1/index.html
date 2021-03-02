@@ -26,9 +26,11 @@
         <input type = "radio" name = "timezone" value = "Hawaii" id = "hawaii">
         <label for = "hawaii">Hawaii Standard Time</label><br>
 
-        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button><br>
-    </form>
-    <div id = "printZone"></div>
+        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button>
+    </form><br>
+    <div id = "printZone"></div><br>
+    <div id  = "timeZone"></div>
+    
     <script type = "text/javascript">
         function readForm(){
             /*THIS LINE OF CODE REFERENCES THE HTML PG BY USING THE DOC OBJ. AND GATHERING ALL THE ELEMENTS WITH THE SAME VALUE FOR THE NAME PROP.*/
@@ -41,12 +43,47 @@
                 /*IF CHECKED IS TRUE*/
                 if (radioButtons[i].checked == true){
                     /*TO SAVE THE CHECKED RADIO BUTTON AT CURRENT INDEX*/
-                    selected = radioButtons[i].value; 
+                    selected = radioButtons[i].value;
+                    //WILL STOP THE FOR LOOP
+                    break;  
                 }
             }
-
+            //NEEDS TO BE INSIDE FUNCTION TO PRINT
             document.getElementById("printZone").innerHTML = selected; 
         }
+
+        function printTime(){
+            var day = new Date();
+
+            var hour = day.getHours(); 
+            var minutes = day.getMinutes();
+            var seconds = day.getSeconds();
+            //SESSION IS FOR WHILE CURRENT OPEN TAB SESSION
+            var session = "AM";
+
+            /*IF HOUR TRUE EQUALS 0(12 MIDNIGHT ON 24HR CLOCK) THEN ADD AM*/
+            if (hour == 0){
+                hour = 12;
+                session = "AM"; 
+            }
+
+            /*IF HOUR IS LESS THEN 12 ON 24 HR CLOCK, SUBTRACT 12HRS
+            (FROM MIDNIGHT TO 12:59AM SUBTRACT 12HRS)*/
+            if (hour > 12){
+                hour = hour - 12;
+                session = "PM";
+            }
+            /*THIS IS WHAT OUR CLOCK WILL LOOK LIKE*/
+            var time = hour + ":" + minutes + ":" + seconds + " " + session; 
+
+            /*TO PRINT THIS NEEDS TO BE INSIDE OF FUNCTION*/
+            document.getElementById("timeZone").innerHTML = time;
+
+            /*WE WANT THE CLOCK TO CONSTANTLY UPDATE*/
+            setTimeout(printTime, 1000);
+        }
+        //TO CALL THE FUNCTION
+        printTime();
     </script>
 </body>
 </html>
