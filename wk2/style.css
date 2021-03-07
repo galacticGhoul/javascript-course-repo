@@ -5,7 +5,7 @@ body {
     /*TO BE CENTERED ON Y + X AXIS*/
     justify-content: center;
     align-items: center;
-    /*SO THE HEIGHT WILL ALWAYS BE RELATIVE TO SCREEN SIZE*/
+    /*SO THE HEIGHT WILL ALWAYS BE RELATIVE TO SCREEN SIzE*/
     min-height: 100vh;
     background: rgb(147, 192, 194);
     color: black;
