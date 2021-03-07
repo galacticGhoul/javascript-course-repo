@@ -1,1 +1,10 @@
-s
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(147, 192, 194);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    size: 20em;
+}
