@@ -24,3 +24,9 @@ body {
     justify-content: center;
     margin-left: 50px;  
 }
+
+ .selected {
+    font-family: "Trebuchet MS", Verdana, sans-serif; 
+    font-size: 100px;
+    padding: 20px; 
+}
