@@ -1,7 +1,11 @@
+/*ADD A SECTOR*/
 body {
+    /*WILL MAKE THE ELEMENTS FIT SCREEN PROPERLY*/
     display: flex;
+    /*TO BE CENTERED ON Y + X AXIS*/
     justify-content: center;
     align-items: center;
+    /*SO THE HEIGHT WILL ALWAYS BE RELATIVE TO SCREEN SIZE*/
     min-height: 100vh;
     background: rgb(147, 192, 194);
     color: black;
