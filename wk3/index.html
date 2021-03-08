@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <script defer scr = "script.js"></script>
+    <title>Timezone</title>
+</head>
+<body>
+    <form>
+        <p>Select Timezone:</p>
+        <input type = "radio" name = "timezone" value = "Pacific" id = "pacific">
+        <label for = "pacific">Pacific Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Central" id = "central">
+        <label for = "central">Central Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Mountain" id = "mountain">
+        <label for = "mountain">Mountain Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Eastern" id = "Eastern">
+        <label for = "eastern">Eastern Standard Time</label><br> 
+        
+        <input type = "radio" name = "timezone" value = "Alaska" id = "alaska">
+        <label for = "alaska">Alaska Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Hawaii" id = "hawaii">
+        <label for = "hawaii">Hawaii Standard Time</label><br>
+
+        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button>
+    </form><br>
+    
+    <div id = "printZone" class = "clock"><br>
+    <div id  = "timeZone">
+    
+    </div>
+    </div>
+</body>
+</html>
