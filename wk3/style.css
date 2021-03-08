@@ -1,0 +1,25 @@
+/*ADD A SECTOR*/
+body {
+    /*WILL MAKE THE ELEMENTS FIT SCREEN PROPERLY*/
+    display: flex;
+    /*TO BE CENTERED ON Y + X AXIS*/
+    justify-content: center;
+    align-items: center;
+    /*SO THE HEIGHT WILL ALWAYS BE RELATIVE TO SCREEN SIzE*/
+    min-height: 100vh;
+    background: rgb(147, 192, 194);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    size: 25em;
+}
+
+ .selected {
+    font-family: "Trebuchet MS", Verdana, sans-serif; 
+    font-size: 100px;
+    padding: 20px; 
+}
+
+button {
+    font: 16px;
+    border-radius: 16px;
+}
