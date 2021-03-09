@@ -13,10 +13,29 @@ body {
     size: 25em;
 }
 
- .selected {
-    font-family: "Trebuchet MS", Verdana, sans-serif; 
-    font-size: 100px;
-    padding: 20px; 
+.clock {
+    /*DISPLAY SET TO FLEX CONTAINER*/
+    display: flex;
+    height: 300px;
+    width: 300px;
+    background:rgb(73, 147, 151);
+    border-radius: 50%;
+    border: 10px solid white;
+    position: relative;
+    margin-left: 50px;
+}
+/*CENTER DOT*/
+.clock::after {
+    position: absolute;
+    content:'';
+    top: 50%;
+    left: 50%;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    /*THIS WILL TRANSLATE THE ITEM 50% OF WIDTH TO LEFT & 50% OF WIDTH UPWARDS*/
+    transform: translate(-50%, -50%);
 }
 
 button {
