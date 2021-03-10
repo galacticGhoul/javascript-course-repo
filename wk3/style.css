@@ -23,6 +23,7 @@ body {
     border: 10px solid white;
     position: relative;
     margin-left: 50px;
+    font-size: 60px;
 }
 /*CENTER DOT*/
 .clock::after {
@@ -36,6 +37,15 @@ body {
     background-color: white;
     /*THIS WILL TRANSLATE THE ITEM 50% OF WIDTH TO LEFT & 50% OF WIDTH UPWARDS*/
     transform: translate(-50%, -50%);
+}
+
+/*THIS WILL STYLE ALL THE DIVS W/ CLASS = NUMBER INSIDE OF CLOCK*/
+.clock .number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
 }
 
 button {
