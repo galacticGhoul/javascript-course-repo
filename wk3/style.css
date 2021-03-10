@@ -23,7 +23,7 @@ body {
     border: 10px solid white;
     position: relative;
     margin-left: 50px;
-    font-size: 60px;
+    font-size: 40px;
 }
 /*CENTER DOT*/
 .clock::after {
@@ -46,7 +46,30 @@ body {
     height: 100%;
     color: white;
     text-align: center;
+    /*USE BUILT IN FUNCTION TO ROTATE NUMBERS INTO CORRECT POSITIONS */
+    /*CREATE A VARIABLE W/ROTATION, SET TO 0*/
+    --rotation:(0); 
+    /*USE TRANSFORM TO CALL ROTATE*/
+    /*ITS IMPORTANT TO SURROUND VAR NAME IN THE FUNCTION*/
+    /*WILL ROTATE ALL DIVS WITH CLASS = NUMBER*/
+    transform: rotate(var(--rotation));
 }
+
+ /*ASSIGN VARING DEGREES TO MOVE THE NUMBERS*/
+/*12 NUMBERS ON A CIRCULAR CLOCK IS 360 DEG, EA. NUMBER WILL BE 30 DEG APART*/
+.clock .number1 {--rotation: 30deg;}
+.clock .number2 {--rotation: 60deg;}
+.clock .number3 {--rotation: 90deg;}
+.clock .number4 {--rotation: 120deg;}
+.clock .number5 {--rotation: 150deg;}
+.clock .number6 {--rotation: 180deg;}
+.clock .number7 {--rotation: 210deg;}
+.clock .number8 {--rotation: 240deg;}
+.clock .number9 {--rotation: 270deg;}
+.clock .number10 {--rotation: 300deg;}
+.clock .number11 {--rotation: 330deg;}
+
+
 
 button {
     font: 16px;
