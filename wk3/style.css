@@ -34,9 +34,12 @@ body {
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    border: 1.5px solid rgb(147, 192, 194);
     background-color: white;
     /*THIS WILL TRANSLATE THE ITEM 50% OF WIDTH TO LEFT & 50% OF WIDTH UPWARDS*/
     transform: translate(-50%, -50%);
+    /*Z-INDEX DEFINES THE ORDER ITEMS WILL APPEAR ON Z-AXIS*/
+    z-index: 100;
 }
 
 /*THIS WILL STYLE ALL THE DIVS W/ CLASS = NUMBER INSIDE OF CLOCK*/
@@ -69,7 +72,36 @@ body {
 .clock .number10 {--rotation: 300deg;}
 .clock .number11 {--rotation: 330deg;}
 
+.clock .hand {
+    bottom: 50%;
+    left: 50%;
+    position: absolute;
+    height: 35%;
+    width: 5%;
+    background-color: white;
+    transform: translate(-50%, 0);
+    border: 1.5px solid rgb(147, 192, 194);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
 
+.clock .hand.second {
+    height: 35%;
+    width: 2%;
+    border: 1.5px solid red;
+    z-index: 12;
+}
+
+.clock .hand.minute{
+   z-index: 11;
+}
+
+.clock .hand.hour {
+    height: 25%;
+    width: 6%;
+    border: 1.5px solid yellow;
+    z-index: 10;
+}
 
 button {
     font: 16px;
