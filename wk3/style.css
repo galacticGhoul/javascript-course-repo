@@ -9,13 +9,18 @@ body {
     min-height: 100vh;
     background: rgb(147, 192, 194);
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    size: 25em;
+  
+}
+
+.timezone {
+	font-family: 'Trebuchet MS', Verdana, sans-serif;
+	font-size: 20px;
+	padding: 20px;
+    margin-right: 50px;
 }
 
 .clock {
     /*DISPLAY SET TO FLEX CONTAINER*/
-    display: flex;
     height: 300px;
     width: 300px;
     background:rgb(73, 147, 151);
@@ -26,8 +31,10 @@ body {
     font-size: 40px;
 }
 /*CENTER DOT*/
+/*AFTER CONTENT*/
 .clock::after {
     position: absolute;
+    /*MEANS NO CONTENT*/
     content:'';
     top: 50%;
     left: 50%;
@@ -44,21 +51,22 @@ body {
 
 /*THIS WILL STYLE ALL THE DIVS W/ CLASS = NUMBER INSIDE OF CLOCK*/
 .clock .number {
+    /*USE BUILT IN FUNCTION TO ROTATE NUMBERS INTO CORRECT POSITIONS */
+    /*CREATE A VARIABLE W/ROTATION, SET TO 0*/
+    --rotation:(0);
     position: absolute;
     width: 100%;
     height: 100%;
     color: white;
     text-align: center;
-    /*USE BUILT IN FUNCTION TO ROTATE NUMBERS INTO CORRECT POSITIONS */
-    /*CREATE A VARIABLE W/ROTATION, SET TO 0*/
-    --rotation:(0); 
+    font-size: 1.5rem;
     /*USE TRANSFORM TO CALL ROTATE*/
     /*ITS IMPORTANT TO SURROUND VAR NAME IN THE FUNCTION*/
     /*WILL ROTATE ALL DIVS WITH CLASS = NUMBER*/
     transform: rotate(var(--rotation));
 }
 
- /*ASSIGN VARING DEGREES TO MOVE THE NUMBERS*/
+ /*ASSIGN VARYING DEGREES TO MOVE THE NUMBERS*/
 /*12 NUMBERS ON A CIRCULAR CLOCK IS 360 DEG, EA. NUMBER WILL BE 30 DEG APART*/
 .clock .number1 {--rotation: 30deg;}
 .clock .number2 {--rotation: 60deg;}
@@ -73,20 +81,27 @@ body {
 .clock .number11 {--rotation: 330deg;}
 
 .clock .hand {
+    /*THIS VAR WILL SERVE AS A VARIABLE TO HOLD THE NUMBER OF DEG OUR HAND WILL BE ROTATED AT ANY GIVEN SECOND*/
+    /*HAS TO BE FIRST*/
+    --rotation: 0; 
     bottom: 50%;
     left: 50%;
     position: absolute;
     height: 35%;
     width: 5%;
     background-color: white;
-    transform: translate(-50%, 0);
     border: 1.5px solid rgb(147, 192, 194);
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    /*TAKES THE ROTATE VARIABLE AND MULTIPLIES IT BY 1 DEGREE*/
+    /*WE ARE CONVERTING THE ROTATION VAR FROM AN INTEGER TO A DEGREE BY * BY 1 DEG*/
+    transform: translate(-50%, 0) rotate(calc(var(--rotation)*1deg));
+    /*CHANGES THE SOURCE OF THE TRANSFORM, INSTEAD OF ROTATING FROM CENTER, WILL ROTATE FROM BOTTOM*/
+    transform-origin: bottom;
 }
 
 .clock .hand.second {
-    height: 35%;
+    height: 40%;
     width: 2%;
     border: 1.5px solid red;
     z-index: 12;
@@ -104,6 +119,7 @@ body {
 }
 
 button {
-    font: 16px;
+    font-size: 16px;
     border-radius: 16px;
+    margin-top: 10px;
 }

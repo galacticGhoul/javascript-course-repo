@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "style.css">
     <script defer scr = "script.js"></script>
-    <title>Timezone</title>
+    <title>Timezone Clock</title>
 </head>
 <body>
     <form>
+        <div class = "timezone">
         <p>Select Timezone:</p>
+
         <input type = "radio" name = "timezone" value = "Pacific" id = "pacific">
         <label for = "pacific">Pacific Standard Time</label><br>
 
@@ -29,10 +31,12 @@
         <input type = "radio" name = "timezone" value = "Hawaii" id = "hawaii">
         <label for = "hawaii">Hawaii Standard Time</label><br>
 
-        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button>
-    </form><br>
+        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button><br>
+        </div>
+    </form>
+    <br>
     
-    <div id = "printZone" class = "clock">
+    <div id = "clock" class = "clock">
         <!--ADDING THE NUMBERS TO ACTUAL CLOCK-->
         <div class = "number number1">1</div>
         <div class = "number number2">2</div>
@@ -52,6 +56,6 @@
         <div class = "hand minute" data-minute-hand></div>
         <div class = "hand second" data-second-hand></div>
     </div>
-
+<p id = "output"></p>
 </body>
 </html>
