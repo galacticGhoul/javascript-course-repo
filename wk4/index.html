@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css">
+    <script defer scr = "script.js"></script>
+    <title>Timezone Clock</title>
+</head>
+<body>
+    <form>
+        <div class = "timezone">
+        <p>Select Timezone:</p>
+
+        <input type = "radio" name = "timezone" value = "Pacific" id = "pacific">
+        <label for = "pacific">Pacific Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Central" id = "central">
+        <label for = "central">Central Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Mountain" id = "mountain">
+        <label for = "mountain">Mountain Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Eastern" id = "Eastern">
+        <label for = "eastern">Eastern Standard Time</label><br> 
+        
+        <input type = "radio" name = "timezone" value = "Alaska" id = "alaska">
+        <label for = "alaska">Alaska Standard Time</label><br>
+
+        <input type = "radio" name = "timezone" value = "Hawaii" id = "hawaii">
+        <label for = "hawaii">Hawaii Standard Time</label><br>
+
+        <button type = "button" value = "Submit" onclick = "readForm()">Submit</button><br>
+        </div>
+    </form>
+    <br>
+    
+    <div id = "clock" class = "clock">
+        <!--ADDING THE NUMBERS TO ACTUAL CLOCK-->
+        <div class = "number number1">1</div>
+        <div class = "number number2">2</div>
+        <div class = "number number3">3</div>
+        <div class = "number number4">4</div>
+        <div class = "number number5">5</div>
+        <div class = "number number6">6</div>
+        <div class = "number number7">7</div>
+        <div class = "number number8">8</div>
+        <div class = "number number9">9</div>
+        <div class = "number number10">10</div>
+        <div class = "number number11">11</div>
+        <div class = "number number12">12</div>
+
+        <!--TO REPRESENT THE HANDS OF CLOCK-->
+        <div class = "hand hour" data-hour-hand></div>
+        <div class = "hand minute" data-minute-hand></div>
+        <div class = "hand second" data-second-hand></div>
+    </div>
+
+    <div class = "digital" id = "digital clock">
+        
+    </div>
+<p id = "output"></p>
+</body>
+</html>
