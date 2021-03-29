@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "style.css">
-    <script defer scr = "script.js"></script>
+    <script type = "text/javascript" defer src = "script.js"></script>
     <title>Timezone Clock</title>
 </head>
 <body>
@@ -38,11 +38,12 @@
 
     <form>
         <div class =  "view">
-            <input type = "radio" name = "view" value = "Digital" id = "digital">
+            <input type = "radio" name = "view" value = "Analog" id = "analog" checked onclick = "setAnalog()">
+            <label for = "analog">Analog Clock</label><br>
+
+            <input type = "radio" name = "view" value = "Digital" id = "digital" onclick = "setDigital()">
             <label for = "digital">Digital Clock</label><br>
 
-            <input type = "radio" name = "view" value = "Analog" id = "analog">
-            <label for = "analog">Analog Clock</label><br>
         </div>
     </form><br>
     
