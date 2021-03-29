@@ -132,4 +132,4 @@ setAnalog()
      element.style.setProperty(`--rotation`, rotationRatio * 360)
  }
 
- printTime()
+ showTime()
