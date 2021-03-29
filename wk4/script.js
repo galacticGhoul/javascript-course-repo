@@ -2,13 +2,32 @@
 var offset = 0;
 
 /*TO CALL OUR FUNCTION THAT SETS THE TIME EVERY 1 SECOND*/
-setInterval(printTime, 1000)
+setInterval(printTime, 1000);
 
+/*TO SELECT A VIEW*/
 const hourHand = document.querySelector('[data-hour-hand]')
 const minuteHand = document.querySelector('[data-minute-hand]')
 const secondHand = document.querySelector('[data-second-hand]')
-    
- 
+
+function setAnalog(){
+    var digital = document.getElementById("digital clock")
+    var analog = document.getElementById("clock")
+    //THERE IS SOMETHING WRONG WHEN FLEX IS USED
+    //BUTTONS DISAPPEAR 
+    analog.style.display = "flex"
+    digital.style.display = "none"
+}
+function setDigital(){
+    var digital = document.getElementById("digital clock")
+    var analog = document.getElementById("clock")
+    analog.style.display = "none"
+    digital.style.display = "flex"
+}
+
+setAnalog()
+
+
+/*TO ACTUALLY READ THE FORM*/
  function readForm(){
      /*THIS LINE OF CODE REFERENCES THE HTML PG BY USING THE DOC OBJ. AND GATHERING ALL THE ELEMENTS WITH THE SAME VALUE FOR THE NAME PROP.*/
      var radioButtons = document.getElementsByName("timezone");
@@ -106,9 +125,6 @@ const secondHand = document.querySelector('[data-second-hand]')
 
             /*TO PRINT THIS NEEDS TO BE INSIDE OF FUNCTION*/
             document.getElementById("digital clock").innerHTML = time;
-
-            /*WE WANT THE CLOCK TO CONSTANTLY UPDATE*/
-            setTimeout(printTime, 1000);
 } 
 
 /*THIS FUNCTION WILL TAKE ELEMENTS THAT WERE JUST CREATED THAT LINK TO THE HAND DIV'S AND THE RATIO FOR THE ROTATION AND LINK THEM TO MOVE THE HANDS ON THE ANALOG CLOCK*/
